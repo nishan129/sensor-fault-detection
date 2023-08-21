@@ -1,3 +1,4 @@
-pymongo==4.2.0
+pymongo[srv]
+certifi
 
 -e . 
