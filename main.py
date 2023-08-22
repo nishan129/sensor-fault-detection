@@ -25,7 +25,23 @@
 
 
 
-# for logging
-from sensor.logger import logging
+# # for logging
+# from sensor.logger import logging
 
-logging.info("We have divieding by zero")
+# logging.info("We have divieding by zero")
+
+#for check data ingention and components
+# from sensor.entity.config_entity import TrainingPipelineConfig, DataIngestionConfig
+
+# if __name__ == '__main__':
+#     training_pipeline_config = TrainingPipelineConfig()
+#     data_ingention_config = DataIngestionConfig(training_pipeline_config=training_pipeline_config)
+#     print(data_ingention_config.__dict__)
+    
+#for test trainingpipeline 
+# from sensor.pipeline.training_pipeline import TrainingPipeline
+
+# if __name__ == "__main__":
+    
+#     training_pipeline = TrainingPipeline()
+#     training_pipeline.run_pipeline()
