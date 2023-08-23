@@ -39,9 +39,9 @@
 #     print(data_ingention_config.__dict__)
     
 #for test trainingpipeline 
-# from sensor.pipeline.training_pipeline import TrainingPipeline
+from sensor.pipeline.training_pipeline import TrainingPipeline
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
     
-#     training_pipeline = TrainingPipeline()
-#     training_pipeline.run_pipeline()
+    training_pipeline = TrainingPipeline()
+    training_pipeline.run_pipeline()

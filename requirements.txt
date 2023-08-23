@@ -1,5 +1,6 @@
 pymongo[srv]
 certifi
 from_root
-
+numpy
+pandas
 -e . 
