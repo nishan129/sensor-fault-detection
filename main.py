@@ -26,7 +26,7 @@
 
 
 # # for logging
-# from sensor.logger import logging
+from sensor.logger import logging
 
 # logging.info("We have divieding by zero")
 
@@ -42,6 +42,8 @@
 from sensor.pipeline.training_pipeline import TrainingPipeline
 
 if __name__ == "__main__":
-    
-    training_pipeline = TrainingPipeline()
-    training_pipeline.run_pipeline()
+    try:
+        training_pipeline = TrainingPipeline()
+        training_pipeline.run_pipeline()
+    except Exception as e:
+        logging.exception(e)
