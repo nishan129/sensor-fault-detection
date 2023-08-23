@@ -3,4 +3,5 @@ certifi
 from_root
 numpy
 pandas
+scikit-learn
 -e . 
