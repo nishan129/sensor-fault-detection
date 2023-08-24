@@ -129,6 +129,8 @@ class DataValidation:
                 invalid_test_file_path=self.data_validation_config.invalid_test_file_path,
                 drif_report_file_path=self.data_validation_config.drift_report_file_path
             )
+            logging.info(f"Data validation artifact: {data_validation_artifact}")
             
+            return data_validation_artifact
         except Exception as e:
             raise SensorException(e,sys)

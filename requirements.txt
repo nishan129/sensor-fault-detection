@@ -6,5 +6,8 @@ pandas
 scikit-learn
 PyYAML
 scipy
+imblearn
+imblearn==0.0
+dill
 
 -e . 
