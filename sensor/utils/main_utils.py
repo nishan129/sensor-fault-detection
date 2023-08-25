@@ -68,12 +68,13 @@ def load_numpy_array_data(file_path: str) -> np.array:
     
 def load_object(file_path: str) -> object:
     try:
-        if os.path.exists(file_path):
+        if not os.path.exists(file_path):
             raise Exception("file path: {file_path} is not exists")
         
         with open(file_path, "rb") as file_obj:
             dill.load(file_obj)
+            logging.info("object in loaded ")
             return dill
-        logging.info("object in loaded ")
+        
     except Exception as e:
         raise SensorException(e, sys) 
