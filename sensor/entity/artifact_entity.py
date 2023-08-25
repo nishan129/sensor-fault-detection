@@ -33,3 +33,18 @@ class ModelTrainerArtifact:
     trainde_model_file_path : str
     train_metric_artifact: ClassificationMetric
     test_metric_artifact: ClassificationMetric
+    
+    
+@dataclass
+class ModelEvaluationArtifact:
+    is_model_accepted : bool
+    imporved_accuracy : float
+    best_model_path : str
+    trained_model_path : str
+    train_model_metric_artifact: ClassificationMetric
+    best_model_metric_artifact : ClassificationMetric
+    
+@dataclass
+class ModelPusherArtifact:
+    save_model_path : str
+    model_file_path : str

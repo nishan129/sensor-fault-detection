@@ -1,5 +1,6 @@
 from datetime import datetime
-import os 
+import os
+from typing import Any 
 from sensor.constant import training_pipeline
 from sensor.ml.model.estimator import SensorModel
 
@@ -78,3 +79,28 @@ class ModelTrainerConfig:
                                                          training_pipeline.MODEL_FILE_NAME)
         self.expected_accuracy: float = training_pipeline.MODEL_TRAINER_EXPECTED_SCORE
         self.overfiting_underfiting_tredshold = training_pipeline.MODEL_TRAINER_OVER_FITING_UNDER_FITING_THRESHOLD
+        
+        
+        
+class ModelEvaluationConfig:
+    
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
+        self.model_evaluation_dir: str = os.path.join(
+            training_pipeline_config.artifact_dir, training_pipeline.MODEL_EVALUATION_DIR_NAME
+        )
+        self.report_file_path = os.path.join(self.model_evaluation_dir,training_pipeline.MODEL_EVALUATION_REPORT_NAME)
+        self.change_threshold = training_pipeline.MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE
+        
+        
+class ModelPusherConfig:
+    
+    def __init__(self,trainig_pipeline_config: TrainingPipelineConfig):
+        self.model_evaluation_dir: str = os.path.join(
+            trainig_pipeline_config.artifact_dir, training_pipeline.MODEL_PUSHER_DIR_NAME)
+        self.model_file_path = os.path.join(self.model_evaluation_dir,training_pipeline.MODEL_PUSHER_SAVED_MODEL_DIR)
+        timestamp = round(datetime.now().timestamp())
+        self.save_model_path = os.path.join(
+            training_pipeline.SAVED_MODEL_DIR,
+            f"{timestamp}",
+            training_pipeline.MODEL_FILE_NAME )
+        
