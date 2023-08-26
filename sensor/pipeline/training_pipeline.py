@@ -12,7 +12,7 @@ from sensor.components.model_pusher import ModelPusher
 from sensor.constant.s3_bucket import TRAINING_BUCKET_NAME
 
 class TrainingPipeline:
-    
+    is_pipeline_running = False
     def __init__(self):
         
         self.training_pipeline_config = TrainingPipelineConfig()
@@ -96,6 +96,7 @@ class TrainingPipeline:
         
     def run_pipeline(self):
         try:
+            TrainingPipeline.is_pipeline_running = True
             data_ingestion_artifact:DataIngestionArtifact = self.start_data_ingestion()
             
             data_validation_artifact=self.start_data_validaton(data_ingestion_artifact=data_ingestion_artifact)
@@ -110,6 +111,8 @@ class TrainingPipeline:
                 raise Exception("Trained model is not better than the best model")
             
             model_pusher_artifact = self.start_model_pusher(model_evaluation_artifact=model_evaluation_artifact)
+            
+            TrainingPipeline.is_pipeline_running= False
 
         except Exception as e:
             raise SensorException(e,sys)
