@@ -13,4 +13,5 @@ xgboost==1.0.2
 # shutil
 fastapi ==0.78.0
 uvicorn == 0.18.3
+python-multipart
 -e . 
