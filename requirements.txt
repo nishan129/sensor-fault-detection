@@ -6,7 +6,6 @@ pandas
 scikit-learn
 PyYAML
 scipy
-imblearn
 imblearn==0.0
 dill
 xgboost==1.0.2
