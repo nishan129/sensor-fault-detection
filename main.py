@@ -28,7 +28,6 @@
 
 #for check data ingention and components
 # from sensor.entity.config_entity import TrainingPipelineConfig, DataIngestionConfig
-
 # if __name__ == '__main__':
 #     training_pipeline_config = TrainingPipelineConfig()
 #     data_ingention_config = DataIngestionConfig(training_pipeline_config=training_pipeline_config)
