@@ -23,11 +23,7 @@
 #     except Exception as e:
 #         print(e)
 
-
-
 # # for logging
-from sensor.logger import logging
-import os,sys
 # logging.info("We have divieding by zero")
 
 #for check data ingention and components
