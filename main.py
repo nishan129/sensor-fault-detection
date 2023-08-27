@@ -27,7 +27,7 @@
 
 # # for logging
 from sensor.logger import logging
-import os
+import os,sys
 # logging.info("We have divieding by zero")
 
 #for check data ingention and components
