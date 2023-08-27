@@ -5,7 +5,6 @@
 #     mongodb_clint = MongoDBClient()
 #     print(mongodb_clint.database.list_collection_names())
 
-
 #for exception handling
 # import sys
 # from sensor.exception import SensorException
